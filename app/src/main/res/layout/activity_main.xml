@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quidditch_pitch"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context="com.example.android.quidditch.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/team_name_text"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/gryffindor"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/gryffindor_score"
+                    style="@style/team_score_text"
+                    android:fontFamily="sans-serif-light" />
+
+                <Button
+                    android:id="@+id/gryffindor_snitch"
+                    style="@style/button_style"
+                    android:onClick="onClick"
+                    android:text="@string/button_catch_snitch" />
+
+                <Button
+                    android:id="@+id/gryffindor_quaffle"
+                    style="@style/button_style"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:onClick="onClick"
+                    android:text="@string/button_quaffle_score" />
+
+                <Button
+                    android:id="@+id/gryffindor_foul"
+                    style="@style/button_style"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:onClick="onClick"
+                    android:text="@string/button_foul" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/team_name_text"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/slytherin"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/slytherin_score"
+                    style="@style/team_score_text"
+                    android:fontFamily="sans-serif-light" />
+
+                <Button
+                    android:id="@+id/slytherin_snitch"
+                    style="@style/button_style"
+                    android:onClick="onClick"
+                    android:text="@string/button_catch_snitch" />
+
+                <Button
+                    android:id="@+id/slytherin_quaffle"
+                    style="@style/button_style"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:onClick="onClick"
+                    android:text="@string/button_quaffle_score" />
+
+                <Button
+                    android:id="@+id/slytherin_foul"
+                    style="@style/button_style"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:onClick="onClick"
+                    android:text="@string/button_foul" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/button_selector"
+            android:onClick="resetScore"
+            android:text="@string/button_reset_score" />
+
+        <TextView
+            android:id="@+id/winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_xlarge"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/white"
+            tools:text="Winner" />
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quidditch</string>
+    <string name="gryffindor">Gryffindor</string>
+    <string name="initial_score">0</string>
+    <string name="button_catch_snitch">Snitch</string>
+    <string name="button_quaffle_score">Quaffle</string>
+    <string name="button_foul">Foul</string>
+    <string name="slytherin">Slytherin</string>
+    <string name="button_reset_score">Reset</string>
+    <string name="snitch_caught_text">The Golden Snitch has been caught!\n</string>
+    <string name="world_cup_text">" have won the Hogwarts Quidditch World Cup 2018!"</string>
+    <string name="new_game_text">New game</string>
+</resources>
