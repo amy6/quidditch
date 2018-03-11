@@ -1,11 +1,16 @@
 package com.example.android.quidditch;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
+import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFocal;
 
 import static android.R.color;
 
@@ -15,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private Button resetButton;
     private int gryffindor_score, slytherin_score;
     private boolean snitchCaught;
+    private int count;
+    private boolean onboardAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +33,59 @@ public class MainActivity extends AppCompatActivity {
 
         winner_display = findViewById(R.id.winner);
         resetButton = findViewById(R.id.reset_button);
+
+        setUpShowCaseView(R.id.slytherin_quaffle, R.string.sv_quaffle_content);
+
+
+    }
+
+    private void setUpShowCaseView(int viewID, int stringID) {
+        onboardAnimation = true;
+
+        new MaterialTapTargetPrompt.Builder(this)
+                .setTarget(findViewById(viewID))
+                .setPrimaryText(stringID)
+                .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener()
+                {
+                    @Override
+                    public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state)
+                    {
+                        if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED
+                                || state == MaterialTapTargetPrompt.STATE_NON_FOCAL_PRESSED)
+                        {
+                            count++;
+                            switch (count) {
+                                case 1:
+                                    setUpShowCaseView(R.id.slytherin_foul, R.string.sv_foul_content);
+                                    break;
+
+                                case 2:
+                                    setUpShowCaseView(R.id.gryffindor_snitch, R.string.sv_snitch_content);
+                                    break;
+
+                                case 3:
+                                    setUpShowCaseView(resetButton.getId(), R.string.sv_reset_content);
+                                    break;
+
+                                case 4:
+                                    onboardAnimation = false;
+
+                            }
+
+                        }
+                    }
+                })
+                .setBackgroundColour(ContextCompat.getColor(this, R.color.colorPrimary))
+                .setPromptFocal(new RectanglePromptFocal())
+                .show();
+
     }
 
     public void onClick(View view) {
+
+        if(onboardAnimation) {
+            return;
+        }
         if (snitchCaught) {
             Toast.makeText(this, getString(R.string.new_game_text), Toast.LENGTH_SHORT).show();
             resetScore(resetButton);
