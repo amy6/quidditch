@@ -20,6 +20,8 @@ android {
 
 dependencies {
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.7.0'
+    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+    compile 'com.getkeepsafe.taptargetview:taptargetview:1.11.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'

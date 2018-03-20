@@ -103,12 +103,12 @@
         </LinearLayout>
 
         <Button
+            style="@style/button_style"
             android:id="@+id/reset_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_xlarge"
-            android:background="@drawable/button_selector"
             android:onClick="resetScore"
             android:text="@string/button_reset_score" />
 

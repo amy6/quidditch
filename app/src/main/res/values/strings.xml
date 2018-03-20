@@ -8,10 +8,13 @@
     <string name="slytherin">Slytherin</string>
     <string name="button_reset_score">Reset</string>
     <string name="snitch_caught_text">The Golden Snitch has been caught!\n</string>
-    <string name="world_cup_text">" have won the Hogwarts Quidditch World Cup 2018!"</string>
+    <string name="world_cup_text">" have won the Quidditch World Cup 2018!"</string>
     <string name="new_game_text">New game</string>
     <string name="sv_reset_content">Resets the scores of both the teams</string>
     <string name="sv_quaffle_content">A Quaffle ball through the hoop gets the team 10 points</string>
     <string name="sv_foul_content">Each foul awards the opponent team 5 points</string>
     <string name="sv_snitch_content">Catching the Snitch awards the team 150 points and ends the game</string>
+    <string name="preference_file_key">PREFERENCE_FILE_KEY</string>
+    <string name="setup_onboard">SETUP_ONBOARD_FLAG</string>
+    <string name="welcome_text">Welcome to the game of Quidditch!  Let\'s begin!</string>
 </resources>
