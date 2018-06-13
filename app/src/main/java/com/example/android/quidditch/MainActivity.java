@@ -12,12 +12,15 @@ import static android.R.color;
 public class MainActivity extends AppCompatActivity {
 
     //declare score variables
-    private int gryffindor_score, slytherin_score;
+    private int gryffindor_score;
+    private int slytherin_score;
     //flag to hold if a new match is being started
     private boolean snitchCaught;
 
     //declare references for views in the layout
-    private TextView gryffindor_score_display, slytherin_score_display, winner_display;
+    private TextView gryffindor_score_display;
+    private TextView slytherin_score_display;
+    private TextView winner_display;
     private Button resetButton;
 
     //toast to display when a new games in started
